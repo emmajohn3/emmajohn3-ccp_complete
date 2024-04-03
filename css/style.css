@@ -10,12 +10,6 @@ main{
 #extra-text{
     display: none;
 }
-@media (prefers-reduced-motion: reduce) {
-    * {
-      transition: none;
-      animation: none;
-    }
-  }
 .grid{
     width: 100%;
     display: grid;
@@ -208,15 +202,44 @@ ol{
    main{
     padding-left: 0;
     }
-    .travel_container{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        justify-items: center;
-    }
     .travel_gallery_container{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         justify-items: center;
         align-items: end;
+    }
+    .travel_container{
+        position: relative;
+        margin: auto;
+    }
+    .travel_container img{
+        width: 60%;
+        height: auto;
+        display: block;
+    }
+    .fade{
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+    @keyframes fade{
+        from {
+            opacity: 0.4;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    .travel_container figure{
+        display: none;
+    }
+    .travel_container figure:first-child{
+        display: block;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+      transition: none;
+      animation: none;
     }
 }
